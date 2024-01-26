@@ -1,13 +1,23 @@
- const express = require("express");
+const express = require("express");
 require("./config");
 const app = express();
+const cors = require("cors")
+
 const model = require("./schema");
 const port = 7000;
+app.use(
+  cors({
+    origin: ["https://snazzy-heliotrope-6b5115.netlify.app/", "http://localhost:3000",], // Replace with your React frontend's URL
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.get("", async (req, resp) => {
   resp.send("helllo");
 });
- 
+
 app.get("/get", async (req, resp) => {
   const data = await model.find();
   console.log(data);
