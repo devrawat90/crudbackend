@@ -14,7 +14,7 @@ app.use(
 );
 
 app.use(express.json());
-app.get("", async (req, resp) => {
+app.get("/", async (req, resp) => {
   resp.send("helllo");
 });
 
