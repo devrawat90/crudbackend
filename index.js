@@ -7,7 +7,7 @@ const model = require("./schema");
 const port = 7000;
 app.use(
   cors({
-    origin: ["https://snazzy-heliotrope-6b5115.netlify.app/", "http://localhost:3000",], // Replace with your React frontend's URL
+    origin: ["https://snazzy-heliotrope-6b5115.netlify.app/",], // Replace with your React frontend's URL
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
